@@ -1,4 +1,4 @@
-// MUSCLECALC VERSION 0.1.0-ALPHA / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
+// MUSCLECALC VERSION 0.1.0 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
 
 // MAIN FILE
 
@@ -21,7 +21,7 @@ fn main() {
 
       if argument == "-a" || argument == "--about" {
       println!("Program:  {}", yellow.to_owned() + "musclecalc" + reset);
-      println!("Version:  0.1.0-alpha");
+      println!("Version:  0.1.0");
       println!("Date:     July 25, 2022");
       println!("Author:   Piotr Bajdek (Poland)");
       println!("Contact:  {}", blue_underlined.to_owned() + "piotr.bajdek@proton.me" + reset);
@@ -38,7 +38,7 @@ fn main() {
       println!("Exercises: {}", cyan.to_owned() + "-p" + reset + ", " + cyan + "--pull-ups" + reset + "    Model for pull-ups");
       println!("           {}", cyan.to_owned() + "-s" + reset + ", " + cyan + "--squats" + reset + "      Model for squats");
       println!("");
-      println!("Example:   {}", yellow.to_owned() + "strengthcalc 69.5 --pull-ups 12" + reset);
+      println!("Example:   {}", yellow.to_owned() + "musclecalc 69.5 --pull-ups 12" + reset);
       println!("");
       println!("See also:  {}", cyan.to_owned() + "-a" + reset + ", " + cyan + "--about" + reset + "       Show contact and program info");
       println!("           {}", cyan.to_owned() + "-h" + reset + ", " + cyan + "--help" + reset + "        Show this help");
@@ -90,7 +90,7 @@ fn main() {
 // VERSION
 
       if argument == "-v" || argument == "--version" {
-      println!("Version: {}", yellow.to_owned() + "0.1.0-alpha" + reset);
+      println!("Version: {}", yellow.to_owned() + "0.1.0" + reset);
       println!("July 25, 2022");
       return;
       }
@@ -102,12 +102,12 @@ fn main() {
    let args: Vec<String> = env::args().collect();
 
    let input1 = args.get(1).expect(&(red.to_owned() + "Missing 'body mass' value! See: --help" + reset));
-   let mass: f32 = input1.parse().expect(&(red.to_owned() + "Incorrect 'body mass' value! Program only processes numbers!" + reset));
+   let mass: f32 = input1.parse().expect(&(red.to_owned() + "Incorrect 'body mass' value! Program only processes numbers! See: --help" + reset));
 
    let input2 = args.get(2).expect(&(red.to_owned() + "Missing 'exercise type' argument! See: --help" + reset));
 
    let input3 = args.get(3).expect(&(red.to_owned() + "Missing 'repetitions' value! See: --help" + reset));
-   let reps: f32 = input3.parse().expect(&(red.to_owned() + "Incorrect 'repetitions' value! Program only processes numbers!" + reset));
+   let reps: f32 = input3.parse().expect(&(red.to_owned() + "Incorrect 'repetitions' value! Program only processes numbers! See: --help" + reset));
 
 // PULL-UPS
 

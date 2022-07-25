@@ -42,7 +42,7 @@ Wathen, D. 1994. Load assignment. In: T.R. Baechle (Ed.), _Essentials of strengt
 
 **1.** Install from crates.io by the use of cargo:
 
-_cargo install musclecalc \--version 0.1.0-alpha_
+_cargo install musclecalc_
 
 By default, the file will be downloaded to `.cargo/bin/`, a hidden folder in your home directory.
 
@@ -54,7 +54,7 @@ By default, the file will be downloaded to `.cargo/bin/`, a hidden folder in you
 
 **1.** Download the binary 'musclecalc' for Linux x86_64 from GitHub:
 
-https://github.com/piotrbajdek/musclecalc/releases/tag/v0.1.0-alpha
+https://github.com/piotrbajdek/musclecalc/releases/tag/v0.1.0
 
 **2.** Make the file executable:
 
@@ -72,7 +72,7 @@ _sudo cp musclecalc /var/usrlocal/bin/_
 
 Download and unpack the musclecalc source from GitHub. Then, build and install the program:
 
-https://github.com/piotrbajdek/musclecalc/releases/tag/v0.1.0-alpha
+https://github.com/piotrbajdek/musclecalc/releases/tag/v0.1.0
 
 _cargo build \--release && sudo cp target/release/musclecalc /usr/bin/_
 

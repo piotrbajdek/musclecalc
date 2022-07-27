@@ -2,7 +2,7 @@
 
 [musclecalc](https://github.com/piotrbajdek/musclecalc) employs mathematical formulae from Mayhew et al. (1992) and Wathen (1994) to estimate the maximum weight one can lift in a single repetition of a physical exercise (known as 1RM: one repetition maximum). Calculations are based on (1) the body mass, (2) the exercise type, and (3) the maximum number of repetitions one is able to perform in a single set without an additional weight (i.e. with its own body mass).
 
-[keywords: bodybuilding, calisthenics, callisthenics, fitness, gym, muscle strength, street workout]
+[keywords: bodybuilding, calculator, calisthenics, callisthenics, fitness, gym, muscle strength, physical training, street workout]
 
 musclecalc can be used by both females and males. Implemented models:
 
@@ -10,11 +10,13 @@ musclecalc can be used by both females and males. Implemented models:
 
 – Mayhew et al. (1992) equation is used as it appears to be more accurate for the upper body (LeSuer et al. 1997; Jiménez and De Paz 2008).
 
-**2. Squats**
+**2. Push-ups** (untested on females and dependent on the body form)
+
+– Modified Mayhew et al. (1992) formula assuming that 30% of the body weight is supported on the ground by legs when push-ups are performed with a typical position of hands at the height of the upper chest.
+
+**3. Squats**
 
 – Wathen (1994) equation is used as it appears to be more accurate for the lower body (LeSuer et al. 1997).
-
-musclecalc remains at an early development stage and more functionalities may be implemented soon.
 
 **References:**
 
@@ -54,7 +56,7 @@ By default, the file will be downloaded to `.cargo/bin/`, a hidden folder in you
 
 **1.** Download the binary 'musclecalc' for Linux x86_64 from GitHub:
 
-https://github.com/piotrbajdek/musclecalc/releases/tag/v0.1.0
+https://github.com/piotrbajdek/musclecalc/releases/tag/v0.2.0
 
 **2.** Make the file executable:
 
@@ -72,7 +74,7 @@ _sudo cp musclecalc /var/usrlocal/bin/_
 
 Download and unpack the musclecalc source from GitHub. Then, build and install the program:
 
-https://github.com/piotrbajdek/musclecalc/releases/tag/v0.1.0
+https://github.com/piotrbajdek/musclecalc/releases/tag/v0.2.0
 
 _cargo build \--release && sudo cp target/release/musclecalc /usr/bin/_
 

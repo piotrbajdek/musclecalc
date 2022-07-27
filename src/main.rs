@@ -1,6 +1,4 @@
-// MUSCLECALC VERSION 0.1.0 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
-
-// MAIN FILE
+// MUSCLECALC VERSION 0.2.0 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
 
 use std::env;
 
@@ -21,8 +19,8 @@ fn main() {
 
       if argument == "-a" || argument == "--about" {
       println!("Program:  {}", yellow.to_owned() + "musclecalc" + reset);
-      println!("Version:  0.1.0");
-      println!("Date:     July 25, 2022");
+      println!("Version:  0.2.0");
+      println!("Date:     July 27, 2022");
       println!("Author:   Piotr Bajdek (Poland)");
       println!("Contact:  {}", blue_underlined.to_owned() + "piotr.bajdek@proton.me" + reset);
       println!("Source:   {}", blue_underlined.to_owned() + "https://github.com/piotrbajdek/musclecalc" + reset);
@@ -36,6 +34,7 @@ fn main() {
       println!("Usage:     {}", yellow.to_owned() + "[BODY MASS IN KG] [EXERCISE] [MAX. REPETITIONS]" + reset);
       println!("");
       println!("Exercises: {}", cyan.to_owned() + "-p" + reset + ", " + cyan + "--pull-ups" + reset + "    Model for pull-ups");
+      println!("           {}", cyan.to_owned() + "-P" + reset + ", " + cyan + "--push-ups" + reset + "    Model for push-ups");
       println!("           {}", cyan.to_owned() + "-s" + reset + ", " + cyan + "--squats" + reset + "      Model for squats");
       println!("");
       println!("Example:   {}", yellow.to_owned() + "musclecalc 69.5 --pull-ups 12" + reset);
@@ -70,10 +69,13 @@ fn main() {
 // MODELS
 
       if argument == "-m" || argument == "--models" {
-      println!("Pull-ups:          {}", cyan.to_owned() + "Mayhew et al. (1992) formula:");
+      println!("Pull-ups           {}", cyan.to_owned() + "Mayhew et al. (1992) formula:");
       println!("{}", yellow.to_owned() + "100 * mass / (52.2 + 41.9 * exp (-0.055 * reps))" + reset);
       println!("");
-      println!("Squats:                   {}", cyan.to_owned() + "Wathen (1994) formula:");
+      println!("Push-ups  {}", cyan.to_owned() + "Modified Mayhew et al. (1992) formula:");
+      println!("{}", yellow.to_owned() + " 70 * mass / (52.2 + 41.9 * exp (-0.055 * reps))" + reset);
+      println!("");
+      println!("Squats                    {}", cyan.to_owned() + "Wathen (1994) formula:");
       println!("{}", yellow.to_owned() + "100 * mass / (48.8 + 53.8 * exp (-0.075 * reps))");
       println!("");
       println!("{}", grey.to_owned() + "***" + reset);
@@ -90,8 +92,8 @@ fn main() {
 // VERSION
 
       if argument == "-v" || argument == "--version" {
-      println!("Version: {}", yellow.to_owned() + "0.1.0" + reset);
-      println!("July 25, 2022");
+      println!("Version: {}", yellow.to_owned() + "0.2.0" + reset);
+      println!("July 27, 2022");
       return;
       }
 
@@ -126,6 +128,29 @@ fn main() {
 
    print!("1RM - body mass = {}", yellow.to_owned());
    print!("{:.1}", rm - mass);
+   println!("{}", reset.to_owned() + " kg");
+   return;
+   }
+
+// PUSH-UPS
+
+   if input2 == "-P" || input2 == "--push-ups" {
+
+   let massmod = mass * 0.7;
+   let crep = -0.055 * reps;
+   let cexp = f32::exp(crep);
+   let mexp = 52.2 + 41.9 * cexp;
+   let rmmod = 100 as f32 * massmod / mexp;
+
+   println!("{}", grey.to_owned() + "Excluding the weight (30%) supported by legs:" + reset);
+   print!("Approximate 1RM = {}", yellow.to_owned());
+   print!("{:.1}", rmmod);
+   println!("{}", reset.to_owned() + " kg");
+
+   println!("{}", grey.to_owned() + "Max. weight you can load:" + reset);
+
+   print!("1RM - mass * 0.7 = {}", yellow.to_owned());
+   print!("{:.1}", rmmod - massmod);
    println!("{}", reset.to_owned() + " kg");
    return;
    }

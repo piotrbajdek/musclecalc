@@ -1,4 +1,4 @@
-// MUSCLECALC VERSION 0.2.0 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
+// MUSCLECALC VERSION 0.2.1 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
 
 use std::env;
 
@@ -19,8 +19,8 @@ fn main() {
 
       if argument == "-a" || argument == "--about" {
       println!("Program:  {}", yellow.to_owned() + "musclecalc" + reset);
-      println!("Version:  0.2.0");
-      println!("Date:     July 27, 2022");
+      println!("Version:  0.2.1");
+      println!("Date:     August 16, 2022");
       println!("Author:   Piotr Bajdek (Poland)");
       println!("Contact:  {}", blue_underlined.to_owned() + "piotr.bajdek@proton.me" + reset);
       println!("Source:   {}", blue_underlined.to_owned() + "https://github.com/piotrbajdek/musclecalc" + reset);
@@ -41,7 +41,7 @@ fn main() {
       println!("");
       println!("See also:  {}", cyan.to_owned() + "-a" + reset + ", " + cyan + "--about" + reset + "       Show contact and program info");
       println!("           {}", cyan.to_owned() + "-h" + reset + ", " + cyan + "--help" + reset + "        Show this help");
-      println!("           {}", cyan.to_owned() + "-l" + reset + ", " + cyan + "--license" + reset + "     Show licesing information");
+      println!("           {}", cyan.to_owned() + "-l" + reset + ", " + cyan + "--license" + reset + "     Show licensing information");
       println!("           {}", cyan.to_owned() + "-m" + reset + ", " + cyan + "--models" + reset + "      Show implemented formulae");
       println!("           {}", cyan.to_owned() + "-v" + reset + ", " + cyan + "--version" + reset + "     Show program version");
       return;
@@ -69,14 +69,14 @@ fn main() {
 // MODELS
 
       if argument == "-m" || argument == "--models" {
-      println!("Pull-ups           {}", cyan.to_owned() + "Mayhew et al. (1992) formula:");
-      println!("{}", yellow.to_owned() + "100 * mass / (52.2 + 41.9 * exp (-0.055 * reps))" + reset);
+      println!("Pull-ups            {}", cyan.to_owned() + "Mayhew et al. (1992) formula:");
+      println!("{}", yellow.to_owned() + " 100 * mass / (52.2 + 41.9 * exp (-0.055 * reps))" + reset);
       println!("");
-      println!("Push-ups  {}", cyan.to_owned() + "Modified Mayhew et al. (1992) formula:");
-      println!("{}", yellow.to_owned() + " 70 * mass / (52.2 + 41.9 * exp (-0.055 * reps))" + reset);
+      println!("Push-ups   {}", cyan.to_owned() + "Modified Mayhew et al. (1992) formula:");
+      println!("{}", yellow.to_owned() + "67.5 * mass / (52.2 + 41.9 * exp (-0.055 * reps))" + reset);
       println!("");
-      println!("Squats                    {}", cyan.to_owned() + "Wathen (1994) formula:");
-      println!("{}", yellow.to_owned() + "100 * mass / (48.8 + 53.8 * exp (-0.075 * reps))");
+      println!("Squats                     {}", cyan.to_owned() + "Wathen (1994) formula:");
+      println!("{}", yellow.to_owned() + " 100 * mass / (48.8 + 53.8 * exp (-0.075 * reps))");
       println!("");
       println!("{}", grey.to_owned() + "***" + reset);
       println!("");
@@ -92,8 +92,8 @@ fn main() {
 // VERSION
 
       if argument == "-v" || argument == "--version" {
-      println!("Version: {}", yellow.to_owned() + "0.2.0" + reset);
-      println!("July 27, 2022");
+      println!("Version: {}", yellow.to_owned() + "0.2.1" + reset);
+      println!("August 16, 2022");
       return;
       }
 
@@ -136,20 +136,20 @@ fn main() {
 
    if input2 == "-P" || input2 == "--push-ups" {
 
-   let massmod = mass * 0.7;
+   let massmod = mass * 0.675;
    let crep = -0.055 * reps;
    let cexp = f32::exp(crep);
    let mexp = 52.2 + 41.9 * cexp;
    let rmmod = 100 as f32 * massmod / mexp;
 
-   println!("{}", grey.to_owned() + "Excluding the weight (30%) supported by legs:" + reset);
+   println!("{}", grey.to_owned() + "Excluding the weight (32.5%) supported by legs:" + reset);
    print!("Approximate 1RM = {}", yellow.to_owned());
    print!("{:.1}", rmmod);
    println!("{}", reset.to_owned() + " kg");
 
    println!("{}", grey.to_owned() + "Max. weight you can load:" + reset);
 
-   print!("1RM - mass * 0.7 = {}", yellow.to_owned());
+   print!("1RM - mass * 0.675 = {}", yellow.to_owned());
    print!("{:.1}", rmmod - massmod);
    println!("{}", reset.to_owned() + " kg");
    return;

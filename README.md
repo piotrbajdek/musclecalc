@@ -12,7 +12,7 @@ musclecalc can be used by both females and males. Implemented models:
 
 **2. Push-ups** (untested on females and dependent on the body form)
 
-– Modified Mayhew et al. (1992) formula assuming that 30% of the body weight is supported on the ground by legs when push-ups are performed with a typical position of hands at the height of the upper chest.
+– Modified Mayhew et al. (1992) formula assuming that 32.5% of the body weight is supported on the ground by legs when push-ups are performed with a typical position of hands at the height of the chest.
 
 **3. Squats**
 
@@ -56,7 +56,7 @@ By default, the file will be downloaded to `.cargo/bin/`, a hidden folder in you
 
 **1.** Download the binary 'musclecalc' for Linux x86_64 from GitHub:
 
-https://github.com/piotrbajdek/musclecalc/releases/tag/v0.2.0
+https://github.com/piotrbajdek/musclecalc/releases/tag/v0.2.1
 
 **2.** Make the file executable:
 
@@ -74,7 +74,7 @@ _sudo cp musclecalc /var/usrlocal/bin/_
 
 Download and unpack the musclecalc source from GitHub. Then, build and install the program:
 
-https://github.com/piotrbajdek/musclecalc/releases/tag/v0.2.0
+https://github.com/piotrbajdek/musclecalc/releases/tag/v0.2.1
 
 _cargo build \--release && sudo cp target/release/musclecalc /usr/bin/_
 

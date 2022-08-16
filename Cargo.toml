@@ -1,6 +1,6 @@
 [package]
 name = "musclecalc"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Piotr Bajdek <piotr.bajdek@proton.me>"]
 edition = "2021"
 description = "command line fitness tools: estimate the one repetition maximum (1RM)"

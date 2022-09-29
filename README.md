@@ -56,13 +56,13 @@ By default, the file will be downloaded to `.cargo/bin/`, a hidden folder in you
 
 **1.** Download the binary 'musclecalc' for Linux x86_64 from GitHub:
 
-https://github.com/piotrbajdek/musclecalc/releases/tag/v0.2.1
+https://github.com/piotrbajdek/musclecalc/releases/tag/v0.2.2
 
 **2.** Make the file executable:
 
 _sudo chmod +x ./musclecalc_
 
-**3a.** Install musclecalc via copying the binary to `/usr/bin/` on most Linux distros:
+**3a.** On most Linux distros, install musclecalc via copying the binary to `/usr/bin/`:
 
 _sudo cp musclecalc /usr/bin/_
 
@@ -74,7 +74,7 @@ _sudo cp musclecalc /var/usrlocal/bin/_
 
 Download and unpack the musclecalc source from GitHub. Then, build and install the program:
 
-https://github.com/piotrbajdek/musclecalc/releases/tag/v0.2.1
+https://github.com/piotrbajdek/musclecalc/releases/tag/v0.2.2
 
 _cargo build \--release && sudo cp target/release/musclecalc /usr/bin/_
 

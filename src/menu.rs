@@ -1,4 +1,4 @@
-// MUSCLECALC VERSION 0.2.2 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
+// MUSCLECALC VERSION 0.2.3 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
 
 // MODULE MENU
 
@@ -13,13 +13,7 @@ use std::process::exit;
 
 // DOCUMENTATION
 
-pub fn documentation() {
-    let reset = "\x1b[0m";
-    let yellow = "\x1b[93m";
-    let blue_underlined = "\x1b[34;4m";
-    let cyan = "\x1b[36m";
-    let grey = "\x1b[38;5;240m";
-
+pub fn documentation(reset: &str, yellow: &str, blue_underlined: &str, cyan: &str, grey: &str) {
     // ARGUMENTS ANYWHERE WITHIN THE STRING
 
     for argument in env::args() {
@@ -27,8 +21,8 @@ pub fn documentation() {
 
         if argument == "-a" || argument == "--about" {
             println!("Program:  {}", yellow.to_owned() + "musclecalc" + reset);
-            println!("Version:  0.2.2");
-            println!("Date:     September 29, 2022");
+            println!("Version:  0.2.3");
+            println!("Date:     November 26, 2022");
             println!("Author:   Piotr Bajdek (Poland)");
             println!("Contact:  {}", blue_underlined.to_owned() + "piotr.bajdek@proton.me" + reset);
             println!("Source:   {}", blue_underlined.to_owned() + "https://github.com/piotrbajdek/musclecalc" + reset);
@@ -100,8 +94,8 @@ pub fn documentation() {
         // VERSION
 
         if argument == "-v" || argument == "--version" {
-            println!("Version: {}", yellow.to_owned() + "0.2.2" + reset);
-            println!("September 29, 2022");
+            println!("Version: {}", yellow.to_owned() + "0.2.3" + reset);
+            println!("November 26, 2022");
             exit(0);
         }
     }

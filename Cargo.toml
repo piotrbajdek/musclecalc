@@ -1,6 +1,6 @@
 [package]
 name = "musclecalc"
-version = "0.2.2"
+version = "0.2.3"
 authors = ["Piotr Bajdek <piotr.bajdek@proton.me>"]
 edition = "2021"
 description = "command line fitness tools: estimate the one repetition maximum (1RM)"
@@ -14,3 +14,8 @@ categories = ["command-line-utilities", "mathematics"]
 opt-level = "z"
 codegen-units = 1
 strip = true
+
+[package.metadata.generate-rpm]
+assets = [
+{ source = "target/release/musclecalc", dest = "/usr/bin/musclecalc", mode = "755" }
+]

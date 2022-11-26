@@ -1,10 +1,10 @@
-// MUSCLECALC VERSION 0.2.2 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
+// MUSCLECALC VERSION 0.2.3 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
 
 // MODULE CALC
 
 // CLIPPY LINTS
 
-#![warn(clippy::cargo, clippy::nursery, clippy::pedantic)]
+#![warn(clippy::nursery, clippy::pedantic)]
 #![allow(clippy::similar_names, clippy::missing_panics_doc)]
 
 // IMPORTS
@@ -13,12 +13,7 @@ use std::env;
 
 // CALCULATIONS
 
-pub fn list() {
-    let reset = "\x1b[0m";
-    let red = "\x1b[31m";
-    let yellow = "\x1b[93m";
-    let grey = "\x1b[38;5;240m";
-
+pub fn list(reset: &str, red: &str, yellow: &str, grey: &str) {
     // COLLECT ARGUMENTS FOR CALCULATIONS
 
     let args: Vec<String> = env::args().collect();

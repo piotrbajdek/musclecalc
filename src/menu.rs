@@ -1,4 +1,4 @@
-// MUSCLECALC VERSION 0.2.3 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
+// MUSCLECALC VERSION 0.2.4 / APACHE LICENSE 2.0 © 2022–2023 PIOTR BAJDEK
 
 // MODULE MENU
 
@@ -13,46 +13,46 @@ use std::process::exit;
 
 // DOCUMENTATION
 
-pub fn documentation(reset: &str, yellow: &str, blue_underlined: &str, cyan: &str, grey: &str) {
+pub fn documentation(reset: &str, blue_underlined: &str, grey: &str, violet: &str, yellow: &str) {
     // ARGUMENTS ANYWHERE WITHIN THE STRING
 
     for argument in env::args() {
         // ABOUT
 
         if argument == "-a" || argument == "--about" {
-            println!("Program:  {}", yellow.to_owned() + "musclecalc" + reset);
-            println!("Version:  0.2.3");
-            println!("Date:     November 26, 2022");
-            println!("Author:   Piotr Bajdek (Poland)");
-            println!("Contact:  {}", blue_underlined.to_owned() + "piotr.bajdek@proton.me" + reset);
-            println!("Source:   {}", blue_underlined.to_owned() + "https://github.com/piotrbajdek/musclecalc" + reset);
-            println!("License:  Apache License 2.0 © 2022 Piotr Bajdek");
+            println!("{}", grey.to_owned() + "Program" + reset + ":  " + yellow + "musclecalc" + reset);
+            println!("{}", grey.to_owned() + "Version" + reset + ":  0.2.4");
+            println!("{}", grey.to_owned() + "Date" + reset + ":     January 29, 2023");
+            println!("{}", grey.to_owned() + "Author" + reset + ":   Piotr Bajdek");
+            println!("{}", grey.to_owned() + "Contact" + reset + ":  " + blue_underlined + "piotr.bajdek@proton.me" + reset);
+            println!("{}", grey.to_owned() + "Source" + reset + ":   " + blue_underlined + "https://github.com/piotrbajdek/musclecalc" + reset);
+            println!("{}", grey.to_owned() + "License" + reset + ":  Apache License 2.0 © 2022–2023 Piotr Bajdek");
             exit(0);
         }
 
         // HELP
 
         if argument == "-h" || argument == "--help" {
-            println!("Usage:     {}", yellow.to_owned() + "[BODY MASS IN KG] [EXERCISE] [MAX. REPETITIONS]" + reset);
+            println!("{}", grey.to_owned() + "Usage" + reset + ":     " + yellow + "musclecalc [body mass in kg] [exercise] [max. repetitions]" + reset);
             println!();
-            println!("Exercises: {}", cyan.to_owned() + "-p" + reset + ", " + cyan + "--pull-ups" + reset + "    Model for pull-ups");
-            println!("           {}", cyan.to_owned() + "-P" + reset + ", " + cyan + "--push-ups" + reset + "    Model for push-ups");
-            println!("           {}", cyan.to_owned() + "-s" + reset + ", " + cyan + "--squats" + reset + "      Model for squats");
+            println!("{}", grey.to_owned() + "Exercises" + reset + ": " + violet + "-p" + reset + ", " + violet + "--pull-ups" + reset + "    Model for pull-ups");
+            println!("           {}", violet.to_owned() + "-P" + reset + ", " + violet + "--push-ups" + reset + "    Model for push-ups");
+            println!("           {}", violet.to_owned() + "-s" + reset + ", " + violet + "--squats" + reset + "      Model for squats");
             println!();
-            println!("Example:   {}", yellow.to_owned() + "musclecalc 69.5 --pull-ups 12" + reset);
+            println!("{}", grey.to_owned() + "Example" + reset + ":   " + yellow + "musclecalc 69.5 --pull-ups 12" + reset);
             println!();
-            println!("See also:  {}", cyan.to_owned() + "-a" + reset + ", " + cyan + "--about" + reset + "       Show contact and program info");
-            println!("           {}", cyan.to_owned() + "-h" + reset + ", " + cyan + "--help" + reset + "        Show this help");
-            println!("           {}", cyan.to_owned() + "-l" + reset + ", " + cyan + "--license" + reset + "     Show licensing information");
-            println!("           {}", cyan.to_owned() + "-m" + reset + ", " + cyan + "--models" + reset + "      Show implemented formulae");
-            println!("           {}", cyan.to_owned() + "-v" + reset + ", " + cyan + "--version" + reset + "     Show program version");
+            println!("{}", grey.to_owned() + "See also" + reset + ":  " + violet + "-a" + reset + ", " + violet + "--about" + reset + "       Display contact and program information");
+            println!("           {}", violet.to_owned() + "-h" + reset + ", " + violet + "--help" + reset + "        Display the help menu");
+            println!("           {}", violet.to_owned() + "-l" + reset + ", " + violet + "--license" + reset + "     Display licensing information");
+            println!("           {}", violet.to_owned() + "-m" + reset + ", " + violet + "--models" + reset + "      Display the list of implemented formulae");
+            println!("           {}", violet.to_owned() + "-v" + reset + ", " + violet + "--version" + reset + "     Display the program version");
             exit(0);
         }
 
         // LICENSE
 
         if argument == "-l" || argument == "--license" {
-            println!("{}", yellow.to_owned() + "Copyright 2022 Piotr Bajdek" + reset);
+            println!("{}", yellow.to_owned() + "Copyright 2022–2023 Piotr Bajdek" + reset);
             println!();
             println!(r#"Licensed under the Apache License, Version 2.0 (the "License");"#);
             println!("you may not use this file except in compliance with the License.");
@@ -71,16 +71,16 @@ pub fn documentation(reset: &str, yellow: &str, blue_underlined: &str, cyan: &st
         // MODELS
 
         if argument == "-m" || argument == "--models" {
-            println!("Pull-ups            {}", cyan.to_owned() + "Mayhew et al. (1992) formula:");
+            println!("Pull-ups            {}", violet.to_owned() + "Mayhew et al. (1992) formula" + reset + ":");
             println!("{}", yellow.to_owned() + " 100 * mass / (52.2 + 41.9 * exp (-0.055 * reps))" + reset);
             println!();
-            println!("Push-ups   {}", cyan.to_owned() + "Modified Mayhew et al. (1992) formula:");
+            println!("Push-ups   {}", violet.to_owned() + "Modified Mayhew et al. (1992) formula" + reset + ":");
             println!("{}", yellow.to_owned() + "67.5 * mass / (52.2 + 41.9 * exp (-0.055 * reps))" + reset);
             println!();
-            println!("Squats                     {}", cyan.to_owned() + "Wathen (1994) formula:");
+            println!("Squats                     {}", violet.to_owned() + "Wathen (1994) formula" + reset + ":");
             println!("{}", yellow.to_owned() + " 100 * mass / (48.8 + 53.8 * exp (-0.075 * reps))");
             println!();
-            println!("{}", grey.to_owned() + "***" + reset);
+            println!("{}", grey.to_owned() + "References" + reset + ":");
             println!();
             println!("Mayhew, J.L., Ball, T.E., Arnold, M.D. and Bowen, J.C. 1992. Relative muscular");
             println!("endurance performance as a predictor of bench press strength in college men");
@@ -94,8 +94,8 @@ pub fn documentation(reset: &str, yellow: &str, blue_underlined: &str, cyan: &st
         // VERSION
 
         if argument == "-v" || argument == "--version" {
-            println!("Version: {}", yellow.to_owned() + "0.2.3" + reset);
-            println!("November 26, 2022");
+            println!("{}", grey.to_owned() + "Version" + reset + ": " + yellow + "0.2.4" + reset);
+            println!("January 29, 2023");
             exit(0);
         }
     }

@@ -1,22 +1,16 @@
 # MUSCLECALC
 
-[musclecalc](https://github.com/piotrbajdek/musclecalc) employs mathematical formulae from Mayhew et al. (1992) and Wathen (1994) to estimate the maximum weight one can lift in a single repetition of a physical exercise (known as 1RM: one repetition maximum). Calculations are based on (1) the body mass, (2) the exercise type, and (3) the maximum number of repetitions one is able to perform in a single set without an additional weight i.e., with its own body mass.
+[musclecalc](https://github.com/piotrbajdek/musclecalc) utilises mathematical formulae from Mayhew et al. (1992) and Wathen (1994) to estimate the maximum weight that can be lifted in a single repetition of a physical exercise, known as the one repetition maximum (1RM). The calculations take into account the body mass, exercise type, and maximum number of repetitions that can be performed without additional weight.
 
 [keywords: bodybuilding, calculator, calisthenics, callisthenics, fitness, gym, muscle strength, physical training, street workout]
 
-musclecalc can be used by both females and males. Implemented models:
+Designed for use by both females and males, musclecalc utilises the following models:
 
-**1. Pull-ups** (including chin-ups, will also work fine for dips and other upper-body exercises lifting the whole body)
+**1. Pull-ups**, including chin-ups, dips, and other upper-body exercises that involve lifting the whole body. The Mayhew et al. (1992) equation is used, as it is possibly more accurate for the upper body (LeSuer et al. 1997; Jiménez and De Paz 2008).
 
-– Mayhew et al. (1992) equation is used as it appears to be more accurate for the upper body (LeSuer et al. 1997; Jiménez and De Paz 2008).
+**2. Push-ups**, for which the a modified Mayhew et al. (1992) formula is used, assuming that 32.5% of the body weight is supported on the ground by legs when push-ups are performed with a typical position of hands at the height of the chest.
 
-**2. Push-ups** (untested on females and dependent on the body form)
-
-– Modified Mayhew et al. (1992) formula assuming that 32.5% of the body weight is supported on the ground by legs when push-ups are performed with a typical position of hands at the height of the chest.
-
-**3. Squats**
-
-– Wathen (1994) equation is used as it appears to be more accurate for the lower body (LeSuer et al. 1997).
+**3. Squats**, for which the Wathen (1994) equation is used, as it is possibly more accurate for the lower body (LeSuer et al. 1997).
 
 **References:**
 
@@ -28,72 +22,72 @@ Mayhew, J.L., Ball, T.E., Arnold, M.D., and Bowen, J.C. 1992. Relative muscular 
 
 Wathen, D. 1994. Load assignment. In: T.R. Baechle (Ed.), _Essentials of strength training and conditioning_, pp. 435–446. Champaign, IL: Human Kinetics.
 
-# EXAMPLES
+# USAGE
 
 ![help-image](https://github.com/piotrbajdek/musclecalc/blob/main/docs/images/help-image.png?raw=true)
+
+![models-image](https://github.com/piotrbajdek/musclecalc/blob/main/docs/images/models-image.png?raw=true)
+
+# EXAMPLES
 
 ![example-image-1](https://github.com/piotrbajdek/musclecalc/blob/main/docs/images/example-image-1.png?raw=true)
 
 # INSTALLATION ON LINUX
 
-[musclecalc](https://github.com/piotrbajdek/musclecalc) should run smoothly on **Windows** and **macOS**, and can be installed by the use of [cargo](https://www.rust-lang.org/tools/install). Yet, it is being developed and primarily tested on **Fedora Linux**.
+[musclecalc](https://github.com/piotrbajdek/musclecalc) is designed to be compatible with **Windows** and **macOS**, and can be easily installed using [cargo](https://www.rust-lang.org/tools/install). However, the primary development and testing environment for musclecalc is **Fedora Linux**.
 
-musclecalc v0.2.3:
+The current version of musclecalc (v0.2.4) has been verified to work properly on Fedora Linux 37 and Ubuntu 22.10.
 
-– Was successfully tested on Arch Linux, Fedora Linux 37, openSUSE Tumbleweed, Ubuntu 22.04 and Ubuntu 22.10.
+## METHOD 1 – USING CARGO
 
-– Failed to run on Mageia 8 due to an old glibc version (required ≥2.34).
+**[Recommended for programmers]**
 
-## METHOD 1 – BY THE USE OF CARGO
-
-**[recommended for programmers]**
-
-**1.** Install from crates.io by the use of cargo:
+**1.** To install musclecalc from [crates.io](https://crates.io/crates/musclecalc), use the following cargo command:
 
 _cargo install musclecalc_
 
-By default, the file will be downloaded to `.cargo/bin/`, a hidden folder in your home directory.
+The executable will be saved in the hidden `.cargo/bin/` directory within your home directory.
 
-**2a.** For convenience, you will probably want to copy musclecalc to `/usr/bin/` as in Method 2 (3a, 3b).
+**2a.** For easy access, you may want to copy the musclecalc file to the `/usr/bin/` directory. This can be done by following the instructions in Method 2 (3a, 3b).
 
-**2b.** Alternatively, add `~/.cargo/bin` directory to your PATH variable (can be set up by [rustup](https://www.rust-lang.org/tools/install)).
+**2b.** As an alternative, you can add the `~/.cargo/bin/` directory to your system's PATH variable, which can be configured using [rustup](https://www.rust-lang.org/tools/install).
 
-## METHOD 2 – LINUX UNIVERSAL BINARIES
+## METHOD 2 – UNIVERSAL LINUX BINARIES
 
-**1.** Download the distro-independent [binary](https://github.com/piotrbajdek/musclecalc/releases/download/v0.2.3/musclecalc) of musclecalc from GitHub.
+**1.** To install musclecalc, first download the distro-independent [binary](https://github.com/piotrbajdek/musclecalc/releases/download/v0.2.4/musclecalc) from GitHub.
 
-**2.** Make the file executable:
+**2.** Then, make the file executable by running the command:
 
 _sudo chmod +x ./musclecalc_
 
-**3a.** On most Linux distros, install musclecalc via copying the binary to `/usr/bin/`:
+**3a.** On most Linux distributions, install musclecalc by copying the binary to `/usr/bin/`:
 
 _sudo cp musclecalc /usr/bin/_
 
-**3b.** On Fedora Silverblue / Kinoite:
+**3b.** For Fedora Silverblue / Kinoite, use this command:
 
 _sudo cp musclecalc /var/usrlocal/bin/_
 
 ## METHOD 3 – DISTRO-SPECIFIC PACKAGES
 
-**[recommended for most users]**
+**[Recommended for most users]**
 
-Distro-specific packages are also available for download for [.rpm](https://github.com/piotrbajdek/musclecalc/releases/download/v0.2.3/musclecalc-0.2.3-1.x86_64.rpm)- and [.deb](https://github.com/piotrbajdek/musclecalc/releases/download/v0.2.3/musclecalc_0.2.3_amd64.deb)-based Linux distros. Installation instructions:
+Distro-specific packages for [.rpm](https://github.com/piotrbajdek/musclecalc/releases/download/v0.2.4/musclecalc-0.2.4-1.x86_64.rpm) and [.deb](https://github.com/piotrbajdek/musclecalc/releases/download/v0.2.4/musclecalc_0.2.4_amd64.deb)-based Linux distributions are also available for download. To install musclecalc on different Linux distributions, follow these instructions:
 
 Fedora Linux / RHEL / openSUSE:
 
-_sudo rpm -i musclecalc-0.2.3-1.x86_64.rpm_
+_sudo rpm -i musclecalc-0.2.4-1.x86_64.rpm_
 
 Fedora Silverblue / Kinoite:
 
-_rpm-ostree install musclecalc-0.2.3-1.x86_64.rpm_
+_rpm-ostree install musclecalc-0.2.4-1.x86_64.rpm_
 
 Ubuntu:
 
-_sudo dpkg -i musclecalc_0.2.3_amd64.deb_
+_sudo dpkg -i musclecalc_0.2.4_amd64.deb_
 
 ## METHOD 4 – MANUAL COMPILATION
 
-Download and unpack the musclecalc [source](https://github.com/piotrbajdek/musclecalc/archive/refs/tags/v0.2.3.zip) from GitHub. Then, build and install the program:
+First, download and unpack the musclecalc [source code](https://github.com/piotrbajdek/musclecalc/archive/refs/tags/v0.2.4.zip) from GitHub. Next, to build and install the program, use the command:
 
 _cargo build \--release && sudo cp target/release/musclecalc /usr/bin/_

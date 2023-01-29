@@ -1,4 +1,4 @@
-// MUSCLECALC VERSION 0.2.3 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
+// MUSCLECALC VERSION 0.2.4 / APACHE LICENSE 2.0 © 2022–2023 PIOTR BAJDEK
 
 // MAIN FILE
 
@@ -15,12 +15,12 @@ pub mod menu;
 
 fn main() {
     let reset = "\x1b[0m";
-    let yellow = "\x1b[93m";
+    let yellow = "\x1b[38;5;220m";
     let red = "\x1b[31m";
     let blue_underlined = "\x1b[34;4m";
-    let cyan = "\x1b[36m";
+    let violet = "\x1b[38;5;133m";
     let grey = "\x1b[38;5;240m";
 
-    menu::documentation(reset, yellow, blue_underlined, cyan, grey);
-    calc::list(reset, red, yellow, grey);
+    menu::documentation(reset, blue_underlined, grey, violet, yellow);
+    calc::list(reset, grey, red, violet, yellow);
 }

@@ -1,9 +1,9 @@
 [package]
 name = "musclecalc"
-version = "0.2.3"
+version = "0.2.4"
 authors = ["Piotr Bajdek <piotr.bajdek@proton.me>"]
 edition = "2021"
-description = "command line fitness tools: estimate the one repetition maximum (1RM)"
+description = "fitness: estimate the one repetition maximum (1RM)"
 readme = "README.md"
 repository = "https://github.com/piotrbajdek/musclecalc"
 license = "Apache-2.0"

@@ -1,4 +1,4 @@
-// MUSCLECALC VERSION 0.2.3 / APACHE LICENSE 2.0 © 2022 PIOTR BAJDEK
+// MUSCLECALC VERSION 0.2.4 / APACHE LICENSE 2.0 © 2022–2023 PIOTR BAJDEK
 
 // MODULE CALC
 
@@ -13,7 +13,7 @@ use std::env;
 
 // CALCULATIONS
 
-pub fn list(reset: &str, red: &str, yellow: &str, grey: &str) {
+pub fn list(reset: &str, grey: &str, red: &str, violet: &str, yellow: &str) {
     // COLLECT ARGUMENTS FOR CALCULATIONS
 
     let args: Vec<String> = env::args().collect();
@@ -36,13 +36,13 @@ pub fn list(reset: &str, red: &str, yellow: &str, grey: &str) {
         let mexp = 41.9f32.mul_add(cexp, 52.2);
         let rm = 100_f32 * mass / mexp;
 
-        print!("Approximate 1RM = {}", yellow.to_owned());
-        print!("{:.1}", rm);
+        print!("{}", violet.to_owned() + "Approximate 1RM" + reset + " = " + yellow);
+        print!("{rm:.1}");
         println!("{}", reset.to_owned() + " kg");
 
-        println!("{}", grey.to_owned() + "Max. weight you can load:" + reset);
+        println!("{}", grey.to_owned() + "Max. weight you can load" + reset + ":");
 
-        print!("1RM - body mass = {}", yellow.to_owned());
+        print!("{}", violet.to_owned() + "1RM " + reset + "-" + violet + " body mass" + reset + " = " + yellow);
         print!("{:.1}", rm - mass);
         println!("{}", reset.to_owned() + " kg");
         return;
@@ -59,14 +59,14 @@ pub fn list(reset: &str, red: &str, yellow: &str, grey: &str) {
         let mexp = 41.9f32.mul_add(cexp, 52.2);
         let rmmod = 100_f32 * massmod / mexp;
 
-        println!("{}", grey.to_owned() + "Excluding the weight (32.5%) supported by legs:" + reset);
-        print!("Approximate 1RM = {}", yellow.to_owned());
-        print!("{:.1}", rmmod);
+        println!("{}", grey.to_owned() + "Excluding the weight supported by legs (32.5%)" + reset + ":");
+        print!("{}", violet.to_owned() + "Approximate 1RM" + reset + " = " + yellow);
+        print!("{rmmod:.1}");
         println!("{}", reset.to_owned() + " kg");
 
-        println!("{}", grey.to_owned() + "Max. weight you can load:" + reset);
+        println!("{}", grey.to_owned() + "Max. weight you can load" + reset + ":");
 
-        print!("1RM - mass * 0.675 = {}", yellow.to_owned());
+        print!("{}", violet.to_owned() + "1RM " + reset + "-" + violet + " mass " + reset + "*" + violet + " 0.675" + reset + " = " + yellow);
         print!("{:.1}", rmmod - massmod);
         println!("{}", reset.to_owned() + " kg");
         return;
@@ -82,13 +82,13 @@ pub fn list(reset: &str, red: &str, yellow: &str, grey: &str) {
         let mexp = 53.8f32.mul_add(cexp, 48.8);
         let rm = 100_f32 * mass / mexp;
 
-        print!("Approximate 1RM = {}", yellow.to_owned());
-        print!("{:.1}", rm);
+        print!("{}", violet.to_owned() + "Approximate 1RM" + reset + " = " + yellow);
+        print!("{rm:.1}");
         println!("{}", reset.to_owned() + " kg");
 
-        println!("{}", grey.to_owned() + "Max. weight you can load:" + reset);
+        println!("{}", grey.to_owned() + "Max. weight you can load" + reset + ":");
 
-        print!("1RM - body mass = {}", yellow.to_owned());
+        print!("{}", violet.to_owned() + "1RM " + reset + "-" + violet + " body mass" + reset + " = " + yellow);
         print!("{:.1}", rm - mass);
         println!("{}", reset.to_owned() + " kg");
         return;

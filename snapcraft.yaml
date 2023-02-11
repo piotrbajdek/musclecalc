@@ -1,0 +1,38 @@
+name: musclecalc
+version: '0.2.4'
+summary:  Fitness - estimate the one repetition maximum (1RM) 
+description: |
+  musclecalc utilises mathematical formulae from Mayhew et al. (1992) and Wathen (1994) to estimate the maximum weight that can be lifted in a single repetition of a physical exercise, known as the one repetition maximum (1RM). The calculations take into account the body mass, exercise type, and maximum number of repetitions that can be performed without additional weight.
+
+  keywords - bodybuilding, calculator, calisthenics, callisthenics, fitness, gym, muscle strength, physical training, street workout
+
+  Designed for use by both females and males, musclecalc utilises the following models
+
+  1. Pull-ups, including chin-ups, dips, and other upper-body exercises that involve lifting the whole body. The Mayhew et al. (1992) equation is used, as it is possibly more accurate for the upper body (LeSuer et al. 1997; Jiménez and De Paz 2008).
+
+  2. Push-ups, for which the a modified Mayhew et al. (1992) formula is used, assuming that 32.5% of the body weight is supported on the ground by legs when push-ups are performed with a typical position of hands at the height of the chest.
+
+  3. Squats, for which the Wathen (1994) equation is used, as it is possibly more accurate for the lower body (LeSuer et al. 1997).
+
+  References
+
+  Jiménez, A. and De Paz, J.A. 2008. Application of the 1RM estimation formulas from the RM in bench press in a group of physically active middle-aged women. J. Hum. Sport Exerc. 3 (1), 10–22.
+
+  LeSuer, D.A, McCormick, J.H., Mayhew, J.L., Wasserstein, R.L. and Arnold, M.D. 1997. The accuracy of prediction equations for estimating 1-RM performance in the bench press, squat, and deadlift. J. Strength and Cond. Res. 11 (4), 211–213.
+
+  Mayhew, J.L., Ball, T.E., Arnold, M.D., and Bowen, J.C. 1992. Relative muscular endurance performance as a predictor of bench press strength in college men and women. J. Appl. Sports Sci. Res. 6 (4), 200–206.
+
+  Wathen, D. 1994. Load assignment. In T.R. Baechle (Ed.), Essentials of strength training and conditioning, pp. 435–446. Champaign, IL; Human Kinetics.
+
+base: core18
+grade: stable
+confinement: strict
+
+parts:
+  musclecalc:
+    plugin: rust
+    source: https://github.com/piotrbajdek/musclecalc.git
+
+apps:
+  musclecalc:
+    command: bin/musclecalc
